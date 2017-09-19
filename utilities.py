@@ -21,4 +21,4 @@ def write_add_testdata(filename, x, y):
             s = str(x_num) + ' ' + str(y_num) + ' ' + str(x_num + y_num) + '\n'
             file.write(s)
             
-write_add_testdata("testdata-add-2-10.txt", 2, 10)
+write_add_testdata("testdata-add-10-10.txt", 10, 10)
