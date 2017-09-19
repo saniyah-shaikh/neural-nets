@@ -4,7 +4,9 @@ Created on Tue Sep 19 14:16:03 2017
 
 @author: Saniyah
 """
-def read_inputs(self, filename):
+import math
+
+def read_inputs(filename):
         file = open(filename, 'r') 
         inputs = []
         outputs = []
@@ -34,10 +36,7 @@ class Neuron(object):
         self.weights = ws
         
     def activation(self, v):
-        if v > 0:
-            return 1
-        else:
-            return -1
+        return math.trunc(v)
         
     def calc_result(self):
         res = 0
@@ -46,21 +45,28 @@ class Neuron(object):
         return self.activation(res)
         
     def reweight(self, expected):
+        print ("Inputs: " + str(self.inputs))
+        print ("Weights: " + str(self.weights))
         real = self.calc_result()
         for x in range(len(self.weights)):
             self.weights[x] = self.weights[x] + (self.learn_w * (expected - real) * self.inputs[x])
         return
 
 class NeuralNet(object):
-    def __init__(self, default_weights = [1, 0, -1]):
+    def __init__(self, default_weights = [-1, 0]):
         self.neuron = Neuron()
         self.neuron.set_weights(default_weights)
 
     def train(self, training_set_inputs, training_set_outputs):
         for x in range(len(training_set_inputs)):
-            self.neuron.set_inputs = training_set_inputs[x]
+            self.neuron.set_inputs(training_set_inputs[x])
             self.neuron.reweight(training_set_outputs[x])
             
     def think(self, inputs):
         self.neuron.set_inputs(inputs)
         return self.neuron.calc_result()
+    
+test = NeuralNet()
+inputs, outputs = read_inputs("testdata-add-2-10.txt")
+test.train(inputs, outputs)
+print (test.think([3, 1]))
