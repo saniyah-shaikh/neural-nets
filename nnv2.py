@@ -17,8 +17,8 @@ def read_inputs(filename):
             out = int(elements[-1])
             inputs.append(inp)
             outputs.append(out)
-        print ("Inputs: " + str(inputs))
-        print ("Outputs: " + str(outputs))
+        # print ("Inputs: " + str(inputs))
+        # print ("Outputs: " + str(outputs))
         return inputs, outputs
     
 
@@ -44,10 +44,10 @@ class Neuron(object):
         return self.activation(res)
         
     def reweight(self, expected):
-        print ("Inputs: " + str(self.inputs))
-        print ("Weights: " + str(self.weights))
+        # print ("Inputs: " + str(self.inputs))
+        # print ("Weights: " + str(self.weights))
         real = self.calc_result()
-        print("Real: " + str(real) + " Expected: " + str(expected))
+        # print("Real: " + str(real) + " Expected: " + str(expected))
         for x in range(len(self.weights)):
             self.weights[x] = self.weights[x] + (self.learn_w * (expected - real) * self.inputs[x])
         return
