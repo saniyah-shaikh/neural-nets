@@ -24,7 +24,7 @@ def read_inputs(filename):
     
 
 class Neuron(object):
-    def __init__(self, ins = [], ws = [], lw = 0.1):
+    def __init__(self, ins = [], ws = [], lw = 0.025):
         self.inputs = ins
         self.weights = ws
         self.learn_w = lw
@@ -36,7 +36,7 @@ class Neuron(object):
         self.weights = ws
         
     def activation(self, v):
-        return math.trunc(v)
+        return int(round(v))
         
     def calc_result(self):
         res = 0
@@ -48,12 +48,13 @@ class Neuron(object):
         print ("Inputs: " + str(self.inputs))
         print ("Weights: " + str(self.weights))
         real = self.calc_result()
+        print("Real: " + str(real) + " Expected: " + str(expected))
         for x in range(len(self.weights)):
             self.weights[x] = self.weights[x] + (self.learn_w * (expected - real) * self.inputs[x])
         return
 
 class NeuralNet(object):
-    def __init__(self, default_weights = [-1, 0]):
+    def __init__(self, default_weights = [0, 0]):
         self.neuron = Neuron()
         self.neuron.set_weights(default_weights)
 
@@ -69,4 +70,4 @@ class NeuralNet(object):
 test = NeuralNet()
 inputs, outputs = read_inputs("testdata-add-2-10.txt")
 test.train(inputs, outputs)
-print (test.think([3, 1]))
+print (test.think([1, 11]))
