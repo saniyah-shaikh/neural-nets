@@ -7,5 +7,5 @@ nnv2.py was created based on the linear perceptron neural network model created 
 1. Make a guess for the connection weights
 2. Calculate the real output and compare it against an expected output
 3. Use the error term to update the weights
-![Update Function][\UpdateRule.PNG]
+![alt text](/updaterule.png)
 4. Loop over a dataset, or until the error does not get smaller
