@@ -23,7 +23,7 @@ def read_inputs(filename):
     
 
 class Neuron(object):
-    def __init__(self, ins = [], ws = [], lw = 0.01):
+    def __init__(self, ins = [], ws = [], lw = 0.0015):
         self.inputs = ins
         self.weights = ws
         self.learn_w = lw
@@ -67,6 +67,6 @@ class NeuralNet(object):
         return self.neuron.calc_result()
     
 test = NeuralNet()
-inputs, outputs = read_inputs("testdata-add-10-10.txt")
+inputs, outputs = read_inputs("testdata-add-20-20.txt")
 test.train(inputs, outputs)
-print (test.think([5, 11]))
+print (test.think([15, 30]))
