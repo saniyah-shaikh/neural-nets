@@ -44,10 +44,10 @@ class Neuron(object):
         return self.activation(res)
         
     def reweight(self, expected):
-        # print ("Inputs: " + str(self.inputs))
-        # print ("Weights: " + str(self.weights))
+        print ("Inputs: " + str(self.inputs))
+        print ("Weights: " + str(self.weights))
         real = self.calc_result()
-        # print("Real: " + str(real) + " Expected: " + str(expected))
+        print("Real: " + str(real) + " Expected: " + str(expected))
         for x in range(len(self.weights)):
             self.weights[x] = self.weights[x] + (self.learn_w * (expected - real) * self.inputs[x])
         return
