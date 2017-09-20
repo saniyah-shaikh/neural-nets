@@ -71,8 +71,8 @@ class NeuralNet(object):
 # print ("15 + 30 = " + str(additionNeuron.think([15, 30])))
 # print ("102 + 97 = " + str(additionNeuron.think([102, 97])))
 
-subtractionNeuron = NeuralNet([0, 0], 0.02)
+subtractionNeuron = NeuralNet([0, 0], 0.002)
 inputs, outputs = read_inputs("testdata-sub-20-20.txt")
 subtractionNeuron.train(inputs, outputs)
-print ("2 - 11 = " + str(subtractionNeuron.think([2, 11])))
-# print ("102 + 97 = " + str(subtractionNeuron.think([102, 97])))
+print ("25 - 11 = " + str(subtractionNeuron.think([25, 11])))
+#print ("102 - 97 = " + str(subtractionNeuron.think([102, 97])))
