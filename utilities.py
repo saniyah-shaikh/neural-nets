@@ -28,4 +28,4 @@ def write_sub_testdata(filename, x, y):
             s = str(x_num) + ' ' + str(y_num) + ' ' + str(x_num - y_num) + '\n'
             file.write(s)
             
-write_sub_testdata("testdata-sub-20-20.txt", 20, 20)
+write_mult_testdata("testdata-mult-20-20.txt", 20, 20)
