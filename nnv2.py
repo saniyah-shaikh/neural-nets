@@ -65,9 +65,10 @@ class NeuralNet(object):
         self.neuron.set_inputs(inputs)
         return round(self.neuron.calc_result())
     
-additionNeuron = NeuralNet([0, 0], 0.0017)
+additionNeuron = NeuralNet([0, 0], 0.0024)
 inputs, outputs = read_inputs("testdata-add-20-20.txt")
 additionNeuron.train(inputs, outputs)
+print("Weights: " + str(additionNeuron.neuron.weights))
 print ("15 + 30 = " + str(additionNeuron.think([15, 30])))
 print ("102 + 97 = " + str(additionNeuron.think([102, 97])))
 
