@@ -35,7 +35,7 @@ class Neuron(object):
         self.weights = ws
         
     def activation(self, v):
-        return round(v, 1)
+        return round(v, 3)
         
     def calc_result(self):
         res = 0
@@ -44,10 +44,10 @@ class Neuron(object):
         return self.activation(res)
         
     def reweight(self, expected):
-        #print ("Inputs: " + str(self.inputs))
-        #print ("Weights: " + str(self.weights))
+        print ("Inputs: " + str(self.inputs))
+        print ("Weights: " + str(self.weights))
         real = self.calc_result()
-        #print("Real: " + str(real) + " Expected: " + str(expected))
+        print("Real: " + str(real) + " Expected: " + str(expected))
         for x in range(len(self.weights)):
             self.weights[x] = self.weights[x] + (self.learn_w * (expected - real) * self.inputs[x])
         return
@@ -68,11 +68,12 @@ class NeuralNet(object):
 additionNeuron = NeuralNet([0, 0], 0.0015)
 inputs, outputs = read_inputs("testdata-add-20-20.txt")
 additionNeuron.train(inputs, outputs)
-#print ("15 + 30 = " + str(additionNeuron.think([15, 30])))
-#print ("102 + 97 = " + str(additionNeuron.think([102, 97])))
+print ("15 + 30 = " + str(additionNeuron.think([15, 30])))
+print ("102 + 97 = " + str(additionNeuron.think([102, 97])))
 
-#subtractionNeuron = NeuralNet([0, 0], 0.0012)
-#inputs, outputs = read_inputs("testdata-sub-20-20.txt")
-#subtractionNeuron.train(inputs, outputs)
-#print ("25 - 11 = " + str(subtractionNeuron.think([25, 11])))
-#print ("102 - 97 = " + str(subtractionNeuron.think([102, 97])))
+
+# subtractionNeuron = NeuralNet([0, 0], 0.0012)
+# inputs, outputs = read_inputs("testdata-sub-20-20.txt")
+# subtractionNeuron.train(inputs, outputs)
+# print ("25 - 11 = " + str(subtractionNeuron.think([25, 11])))
+# print ("102 - 97 = " + str(subtractionNeuron.think([102, 97])))
