@@ -44,10 +44,10 @@ class Neuron(object):
         return self.activation(res)
         
     def reweight(self, expected):
-        print ("Inputs: " + str(self.inputs))
-        print ("Weights: " + str(self.weights))
+        # print ("Inputs: " + str(self.inputs))
+        # print ("Weights: " + str(self.weights))
         real = self.calc_result()
-        print("Real: " + str(real) + " Expected: " + str(expected))
+        # print("Real: " + str(real) + " Expected: " + str(expected))
         for x in range(len(self.weights)):
             self.weights[x] = self.weights[x] + (self.learn_w * (expected - real) * self.inputs[x])
         return
@@ -63,9 +63,9 @@ class NeuralNet(object):
             
     def think(self, inputs):
         self.neuron.set_inputs(inputs)
-        return int(self.neuron.calc_result())
+        return round(self.neuron.calc_result())
     
-additionNeuron = NeuralNet([0, 0], 0.0015)
+additionNeuron = NeuralNet([0, 0], 0.0017)
 inputs, outputs = read_inputs("testdata-add-20-20.txt")
 additionNeuron.train(inputs, outputs)
 print ("15 + 30 = " + str(additionNeuron.think([15, 30])))
