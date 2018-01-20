@@ -36,6 +36,21 @@ class Neuron(object):
         
     def activation(self, v):
         return round(v, 3)
+    
+    # introduce nonlinearities
+    def relu(self, v):
+        if (v > 0): 
+            v
+        else:
+            0
+            
+    # TODO: get means squared error formula
+    def mean_squared_error(self, expected, actual):
+        return 0
+    
+    # TODO: get cross-entropy loss formula
+    def cross_entropy_loss(self, expected, actual):
+        return 0
         
     def calc_result(self):
         res = 0
