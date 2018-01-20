@@ -38,18 +38,15 @@ plt.title("Testing Data")
 plt.show()
 
 #Now Train Classifier
-print("")
-print("Creating Neural Network Classifier...")
+print("\nCreating Neural Network Classifier...")
 clf = MLPClassifier(hidden_layer_sizes=(20,10), alpha=1e-3, learning_rate_init=1e-3, 
                     max_iter=5000, shuffle=True, warm_start=True)
-print("")
-print("Fitting Neural Network classifier...")
+print("\nFitting Neural Network classifier...")
 clf.fit(X_train, y_train)
 
 training_accuracy = clf.score(X_train, y_train)
 test_accuracy = clf.score(X_test, y_test)
-print("Training accuracy: {}, Test Accuracy: {}".format(training_accuracy, test_accuracy))
-print("")
+print("Training accuracy: {}, Test Accuracy: {}\n".format(training_accuracy, test_accuracy))
 
 #Visualize Decision Boundary
 x_min, x_max = X[:, 0].min() - .5, X[:, 0].max() + .5
