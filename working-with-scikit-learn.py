@@ -8,6 +8,7 @@ Created on Fri Jan 19 21:27:47 2018
 # playing with scikit-learn
 
 # Pulled initial code from www.github.com/chanlaw/nn-presentation after PennApps demo
+# more code w comments: https://github.com/yutingyue514/ml_presentation_femmehacks/blob/master/nn_example.ipynb (Femmehacks presentation)
 
 import numpy as np
 from matplotlib import pyplot as plt

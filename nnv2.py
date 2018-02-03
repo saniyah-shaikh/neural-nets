@@ -20,7 +20,6 @@ def read_inputs(filename):
         # print ("Inputs: " + str(inputs))
         # print ("Outputs: " + str(outputs))
         return inputs, outputs
-    
 
 class Neuron(object):
     def __init__(self, ins = [], ws = [], lw = 0.01):
@@ -36,6 +35,9 @@ class Neuron(object):
         
     def activation(self, v):
         return round(v, 3)
+    
+    # information on different loss functions: 
+    # http://ml-cheatsheet.readthedocs.io/en/latest/
     
     # introduce nonlinearities
     def relu(self, v):
@@ -94,3 +96,5 @@ subtractionNeuron.train(inputs, outputs)
 print("Weights: " + str(subtractionNeuron.neuron.weights))
 print ("25 - 11 = " + str(subtractionNeuron.think([25, 11])))
 print ("102 - 97 = " + str(subtractionNeuron.think([102, 97])))
+
+# Predicting Zillow prices on github
